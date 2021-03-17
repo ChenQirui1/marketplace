@@ -11,7 +11,7 @@ import json
 
 app = Flask(__name__)
 app.config['TESTING'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://bfb4368d3b76b8:e8b12ae4@us-cdbr-east-03.cleardb.com/heroku_7e5904ff38ee531?reconnect=true'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = "lkkajdghdadkglajkgajdisa931!.hl" # a secret key for your app
 UPLOAD_FOLDER = 'static/uploads/'
@@ -1245,8 +1245,7 @@ def test():
         print(lol)
     print(stuff)
     return req
-    
 
-    
+
 if __name__ == "__main__":
     app.run(debug=True)
